@@ -4,13 +4,13 @@
 ## Classification Algorithm used: K nearest neighbour mean classification ##
 
 ### Implementation details: ###
-Below are the two main steps for the relevance score calculations of test data:
-* 1.	Training the relevance prediction model *
+**Below are the two main steps for the relevance score calculations of test data:**
+**1.	Training the relevance prediction model**
 
 Have used the complete training data from the csv for training. 
 When user assigned the relevance value to the each product based on search terms, he compared the search term with product title and image, and product description. Based on which he has assigned the relevance value to each of the search term. 
 
-* Below are the steps for training the model: *
+**Below are the steps for training the model:**
 * 1.1	Calculating the tf for test and train (Python Module: calcTfTest() ) *
 •	The python code calculates term frequency (used logarithmic term frequency) for each product title, description, brand name, and the corresponding search term in the training data. 
 •	Perform the preprocessing using regular expressions,and string replace.
