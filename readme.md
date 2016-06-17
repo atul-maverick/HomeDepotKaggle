@@ -28,7 +28,7 @@ When user assigned the relevance value to the each product based on search terms
 
 Each of the search ID will have cosine similarity value for which we have a relevance associated in the training data file. This forms the deciding factor for choosing the relevance value for the search IDS of test data. <br />
 
-####2.K NN classification of Relevance based on cosine similarity (Python module: classify_test())#### <br />
+####2.K NN classification of Relevance based on cosine similarity#### <br />
 
 •	Sort the cosine similarity dictionary based on the cosine similarity values.<br />
 •	Perform the preprocessing and spell check on the search terms before calculating the cosine similarity.<br />
