@@ -10,7 +10,7 @@
 Have used the complete training data from the csv for training. 
 When user assigned the relevance value to the each product based on search terms, he compared the search term with product title and image, and product description. Based on which he has assigned the relevance value to each of the search term. 
 
-**Below are the steps for training the model:**
+**Below are the steps for training the model:**<br />
 **1.1	Calculating the tf for test and train (Python Module: calcTfTest() )** <br />
 •	The python code calculates term frequency (used logarithmic term frequency) for each product title, description, brand name, and the corresponding search term in the training data. 
 •	Perform the preprocessing using regular expressions,and string replace. <br />
