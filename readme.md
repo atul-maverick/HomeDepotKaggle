@@ -4,8 +4,8 @@
 ## Classification Algorithm used: K nearest neighbour mean classification ##
 
 ### Implementation details: ###
-**Below are the two main steps for the relevance score calculations of test data:**
-**1.	Training the relevance prediction model**
+####Below are the two main steps for the relevance score calculations of test data:####
+####1.	Training the relevance prediction model####
 
 Have used the complete training data from the csv for training. 
 When user assigned the relevance value to the each product based on search terms, he compared the search term with product title and image, and product description. Based on which he has assigned the relevance value to each of the search term. 
@@ -28,7 +28,7 @@ When user assigned the relevance value to the each product based on search terms
 
 Each of the search ID will have cosine similarity value for which we have a relevance associated in the training data file. This forms the deciding factor for choosing the relevance value for the search IDS of test data. <br />
 
-**2.	K NN classification of Relevance based on cosine similarity (Python module: classify_test() )**<br />
+####2.	K NN classification of Relevance based on cosine similarity (Python module: classify_test() )####<br />
 
 •	Sort the cosine similarity dictionary based on the cosine similarity values.<br />
 •	Perform the preprocessing and spell check on the search terms before calculating the cosine similarity.<br />
