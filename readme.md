@@ -13,26 +13,26 @@ When user assigned the relevance value to the each product based on search terms
 **Below are the steps for training the model:**
 **1.1	Calculating the tf for test and train (Python Module: calcTfTest() )** <br />
 •	The python code calculates term frequency (used logarithmic term frequency) for each product title, description, brand name, and the corresponding search term in the training data. 
-•	Perform the preprocessing using regular expressions,and string replace.
-•	Store each new term into personal word list. This word list is used for spell check of search terms. 
-•	Not considering document frequency, because the user examined only the particular product for assigning the values. 
+•	Perform the preprocessing using regular expressions,and string replace. <br />
+•	Store each new term into personal word list. This word list is used for spell check of search terms. <br />
+•	Not considering document frequency, because the user examined only the particular product for assigning the values. <br />
 •	Store the calculated tf into a dictionary based on the Product UID.
-(Module calcTfTest() performs the above steps for train and test data)
+(Module calcTfTest() performs the above steps for train and test data)<br />
 
 
 
-**1.2	Calculating the cosine similarity of the test data (Python module: calculateCossim_train() )**
-•	Considering each term frequency as vector, calculate the cosine similarity between product title and the corresponding search term, then product description and search term, and then similarly with brand name. 
-•	And as the length of brand name will be smaller, the cosine similarity will have higher weightage, then product title, followed by description. 
-•	Sum the cosine similarity values and store it into a dictionary with searchID as the key value. 
+**1.2	Calculating the cosine similarity of the test data (Python module: calculateCossim_train() )**<br />
+•	Considering each term frequency as vector, calculate the cosine similarity between product title and the corresponding search term, then product description and search term, and then similarly with brand name. <br />
+•	And as the length of brand name will be smaller, the cosine similarity will have higher weightage, then product title, followed by description. <br />
+•	Sum the cosine similarity values and store it into a dictionary with searchID as the key value. <br />
 
-Each of the search ID will have cosine similarity value for which we have a relevance associated in the training data file. This forms the deciding factor for choosing the relevance value for the search IDS of test data. 
+Each of the search ID will have cosine similarity value for which we have a relevance associated in the training data file. This forms the deciding factor for choosing the relevance value for the search IDS of test data. <br />
 
-**2.	K NN classification of Relevance based on cosine similarity (Python module: classify_test() )**
+**2.	K NN classification of Relevance based on cosine similarity (Python module: classify_test() )**<br />
 
-•	Sort the cosine similarity dictionary based on the cosine similarity values.
-•	Perform the preprocessing and spell check on the search terms before calculating the cosine similarity.
-•	Calculate the cosine similarity between search term and product title, description, and brand name for each search id. (in similar way as calculated for test data).  
-•	Using binary search find the index of the search ID whose cosine similarity value is closest. Get the 10 closest search ID’s.
-•	The final relevance value is the mean of the relevance values of the 10 closest search ID’s.
+•	Sort the cosine similarity dictionary based on the cosine similarity values.<br />
+•	Perform the preprocessing and spell check on the search terms before calculating the cosine similarity.<br />
+•	Calculate the cosine similarity between search term and product title, description, and brand name for each search id. (in similar way as calculated for test data).  <br />
+•	Using binary search find the index of the search ID whose cosine similarity value is closest. Get the 10 closest search ID’s.<br />
+•	The final relevance value is the mean of the relevance values of the 10 closest search ID’s.<br />
 
